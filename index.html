@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Arowosola Integrated Services — Finishing Works</title>
+<meta name="description" content="Roof & wall insulation, ceiling works, screeding, painting, paint production, property maintenance and cleaning services.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --teal-deep:#0A6E68;
+    --teal-deeper:#075450;
+    --teal-bright:#1FCFC0;
+    --ink:#122120;
+    --concrete:#EDE9E1;
+    --paper:#F8F6F2;
+    --steel:#516462;
+    --line: rgba(18,33,32,0.1);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:'Inter',sans-serif;
+    background:var(--paper);
+    color:var(--ink);
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3{font-family:'Space Grotesk',sans-serif; line-height:1.05; letter-spacing:-0.01em;}
+  .mono{font-family:'JetBrains Mono',monospace; letter-spacing:0.02em;}
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1140px; margin:0 auto; padding:0 24px;}
+  :focus-visible{outline:3px solid var(--teal-bright); outline-offset:3px;}
+
+  /* ---------- header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:var(--teal-deep);
+    color:var(--paper);
+    border-bottom:1px solid rgba(255,255,255,0.12);
+  }
+  .nav{display:flex; align-items:center; justify-content:space-between; padding:16px 24px; gap:16px;}
+  .brand{display:flex; flex-direction:column; line-height:1.1;}
+  .brand-name{font-family:'Space Grotesk'; font-weight:700; font-size:17px; letter-spacing:0.01em;}
+  .brand-tag{font-family:'JetBrains Mono'; font-size:10px; letter-spacing:0.14em; color:var(--teal-bright); text-transform:uppercase; margin-top:2px;}
+  .nav-links{display:flex; align-items:center; gap:28px; font-size:14px;}
+  .nav-links a{opacity:0.85; transition:opacity .2s;}
+  .nav-links a:hover{opacity:1;}
+  .nav-cta{
+    background:var(--teal-bright); color:var(--teal-deeper); font-weight:600; font-size:13px;
+    padding:9px 16px; border-radius:100px; white-space:nowrap;
+    transition:transform .15s ease;
+  }
+  .nav-cta:hover{transform:translateY(-1px);}
+  .nav-toggle{display:none; background:none; border:none; color:var(--paper); font-size:24px; cursor:pointer;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:absolute; top:100%; left:0; right:0;
+      background:var(--teal-deep); flex-direction:column; align-items:flex-start;
+      padding:18px 24px 24px; gap:16px;
+      border-bottom:1px solid rgba(255,255,255,0.12);
+      display:none;
+    }
+    .nav-links.open{display:flex;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- hero ---------- */
+  .hero{
+    background: linear-gradient(165deg, var(--teal-deep) 0%, var(--teal-deeper) 62%, #063f3c 100%);
+    color:var(--paper);
+    padding:88px 0 64px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background-image: repeating-linear-gradient(135deg, rgba(255,255,255,0.035) 0 2px, transparent 2px 26px);
+    pointer-events:none;
+  }
+  .hero-inner{position:relative; z-index:1; max-width:760px;}
+  .eyebrow{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:'JetBrains Mono'; font-size:12px; letter-spacing:0.16em; text-transform:uppercase;
+    color:var(--teal-bright); margin-bottom:22px;
+  }
+  .eyebrow::before{content:""; width:8px; height:8px; background:var(--teal-bright); border-radius:2px; display:inline-block;}
+  .hero h1{font-size:clamp(38px, 6.4vw, 68px); font-weight:700; margin-bottom:22px;}
+  .hero h1 span{color:var(--teal-bright);}
+  .hero p{font-size:clamp(16px, 2vw, 19px); color:rgba(248,246,242,0.82); max-width:52ch; margin-bottom:36px;}
+  .cta-row{display:flex; flex-wrap:wrap; gap:14px;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    padding:14px 24px; border-radius:100px; font-weight:600; font-size:15px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .btn-primary{background:var(--teal-bright); color:var(--teal-deeper);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(31,207,192,0.3);}
+  .btn-ghost{border:1px solid rgba(248,246,242,0.35); color:var(--paper);}
+  .btn-ghost:hover{background:rgba(248,246,242,0.08); transform:translateY(-2px);}
+
+  /* ---------- ticker signature ---------- */
+  .ticker{
+    background:var(--ink); color:var(--teal-bright);
+    overflow:hidden; white-space:nowrap; border-top:1px solid rgba(255,255,255,0.08); border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .ticker-track{display:inline-flex; animation:scroll 32s linear infinite;}
+  .ticker span{
+    font-family:'JetBrains Mono'; font-size:13px; letter-spacing:0.1em; text-transform:uppercase;
+    padding:14px 28px; display:inline-flex; align-items:center; gap:28px;
+  }
+  .ticker span::after{content:"◆"; color:var(--teal-deep); font-size:9px; margin-left:28px;}
+  @keyframes scroll{
+    from{transform:translateX(0);}
+    to{transform:translateX(-50%);}
+  }
+  @media (prefers-reduced-motion: reduce){
+    .ticker-track{animation:none;}
+  }
+
+  /* ---------- section shell ---------- */
+  section{padding:88px 0;}
+  .section-head{max-width:620px; margin-bottom:52px;}
+  .section-tag{font-family:'JetBrains Mono'; font-size:12px; letter-spacing:0.14em; text-transform:uppercase; color:var(--teal-deep); margin-bottom:14px; display:block;}
+  .section-head h2{font-size:clamp(28px,4vw,42px); font-weight:700; color:var(--ink);}
+  .section-head p{color:var(--steel); margin-top:14px; font-size:16px;}
+
+  /* ---------- services ---------- */
+  .services{background:var(--paper);}
+  .service-grid{display:grid; grid-template-columns:repeat(3, 1fr); gap:1px; background:var(--line); border:1px solid var(--line);}
+  .service-card{
+    background:var(--paper); padding:32px 28px; transition:background .2s ease;
+  }
+  .service-card:hover{background:var(--concrete);}
+  .service-num{font-family:'JetBrains Mono'; font-size:12px; color:var(--teal-deep); margin-bottom:18px; display:block;}
+  .service-card h3{font-size:19px; font-weight:600; margin-bottom:10px; color:var(--ink);}
+  .service-card p{font-size:14.5px; color:var(--steel);}
+  @media (max-width:900px){ .service-grid{grid-template-columns:repeat(2,1fr);} }
+  @media (max-width:600px){ .service-grid{grid-template-columns:1fr;} }
+
+  /* ---------- work / gallery ---------- */
+  .work{background:var(--concrete);}
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    grid-auto-rows:220px;
+    gap:10px;
+  }
+  .gallery-item{
+    position:relative; overflow:hidden; border-radius:4px;
+    background:var(--ink);
+  }
+  .gallery-item.tall{grid-row:span 2;}
+  .gallery-item img{
+    width:100%; height:100%; object-fit:cover;
+    transition:transform .5s ease;
+  }
+  .gallery-item:hover img{transform:scale(1.06);}
+  .gallery-caption{
+    position:absolute; left:0; right:0; bottom:0;
+    padding:14px 14px 12px;
+    background:linear-gradient(0deg, rgba(7,20,19,0.88) 0%, rgba(7,20,19,0.35) 60%, transparent 100%);
+    color:var(--paper);
+  }
+  .gallery-caption .mono{font-size:10px; color:var(--teal-bright); display:block; margin-bottom:3px;}
+  .gallery-caption span.label{font-size:13.5px; font-weight:500;}
+  @media (max-width:900px){
+    .gallery-grid{grid-template-columns:repeat(2,1fr); grid-auto-rows:200px;}
+  }
+  @media (max-width:520px){
+    .gallery-grid{grid-template-columns:1fr; grid-auto-rows:220px;}
+    .gallery-item.tall{grid-row:span 1;}
+  }
+
+  /* ---------- why ---------- */
+  .why{background:var(--teal-deep); color:var(--paper);}
+  .why .section-tag{color:var(--teal-bright);}
+  .why .section-head h2{color:var(--paper);}
+  .why .section-head p{color:rgba(248,246,242,0.75);}
+  .why-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:32px;}
+  .why-item{padding-top:20px; border-top:2px solid rgba(255,255,255,0.2);}
+  .why-item .mono{font-size:12px; color:var(--teal-bright); display:block; margin-bottom:12px;}
+  .why-item h3{font-size:18px; font-weight:600; margin-bottom:8px;}
+  .why-item p{font-size:14.5px; color:rgba(248,246,242,0.78);}
+  @media (max-width:760px){ .why-grid{grid-template-columns:1fr;} }
+
+  /* ---------- contact ---------- */
+  .contact{background:var(--paper);}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:48px;}
+  .contact-card{
+    background:var(--ink); color:var(--paper); border-radius:12px; padding:40px;
+  }
+  .contact-card h2{font-size:26px; margin-bottom:12px;}
+  .contact-card p{color:rgba(248,246,242,0.72); margin-bottom:28px; font-size:15px;}
+  .contact-methods{display:flex; flex-direction:column; gap:14px;}
+  .contact-method{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 18px; border:1px solid rgba(255,255,255,0.15); border-radius:8px;
+    transition:border-color .2s ease, background .2s ease;
+  }
+  .contact-method:hover{border-color:var(--teal-bright); background:rgba(255,255,255,0.03);}
+  .contact-method .mono{font-size:11px; color:var(--teal-bright); display:block; margin-bottom:4px;}
+  .contact-method .value{font-size:15.5px; font-weight:500;}
+  .contact-method .arrow{color:var(--teal-bright); font-size:18px;}
+  .contact-side{display:flex; flex-direction:column; justify-content:center;}
+  .contact-side h3{font-size:20px; margin-bottom:16px;}
+  .contact-side p{color:var(--steel); font-size:15px; margin-bottom:10px;}
+  @media (max-width:800px){ .contact-grid{grid-template-columns:1fr;} }
+
+  /* ---------- footer ---------- */
+  footer{background:var(--ink); color:rgba(248,246,242,0.6); padding:32px 0; font-size:13px;}
+  .footer-inner{display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;}
+
+  /* ---------- reveal ---------- */
+  .reveal{opacity:0; transform:translateY(24px); transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1; transform:translateY(0);}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav wrap">
+    <div class="brand">
+      <span class="brand-name">AROWOSOLA</span>
+      <span class="brand-tag">Integrated Services</span>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#services">Services</a>
+      <a href="#work">Our Work</a>
+      <a href="#contact">Contact</a>
+      <a class="nav-cta" href="https://wa.me/2348035142283" target="_blank" rel="noopener">Chat on WhatsApp</a>
+    </div>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-inner">
+    <span class="eyebrow">Finishing Works · Oyo State</span>
+    <h1>Surfaces done <span>properly.</span></h1>
+    <p>Roof and wall insulation, ceiling works, screeding, painting — and our own paint, mixed to last. One contractor, start to finish.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="https://wa.me/2348035142283" target="_blank" rel="noopener">Chat on WhatsApp</a>
+      <a class="btn btn-ghost" href="tel:+2348035142283">Call now</a>
+    </div>
+  </div>
+</section>
+
+<div class="ticker">
+  <div class="ticker-track">
+    <span><span>Roof &amp; Wall Insulation</span><span>Ceiling Works</span><span>Wall Screeding</span><span>Painting</span><span>Paint Production</span><span>Property Maintenance</span><span>Cleaning Services</span></span>
+    <span><span>Roof &amp; Wall Insulation</span><span>Ceiling Works</span><span>Wall Screeding</span><span>Painting</span><span>Paint Production</span><span>Property Maintenance</span><span>Cleaning Services</span></span>
+  </div>
+</div>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">What we do</span>
+      <h2>Six trades, one team.</h2>
+      <p>No need to hire separate contractors for each stage — we cover the full finish, from insulation to the final coat of paint.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="service-grid reveal">
+      <div class="service-card">
+        <span class="service-num mono">/01</span>
+        <h3>Roof &amp; Wall Insulation</h3>
+        <p>Rockwool insulation fitted on roofs and walls to cut heat and noise.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num mono">/02</span>
+        <h3>Ceiling Works</h3>
+        <p>Suspended ceilings and gypsum boarding (POP), finished clean and level.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num mono">/03</span>
+        <h3>Wall Screeding &amp; Painting</h3>
+        <p>Smooth, even screeding followed by a lasting paint finish.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num mono">/04</span>
+        <h3>Paint Production</h3>
+        <p>Paint mixed and produced in-house, so the colour and finish are exactly right.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num mono">/05</span>
+        <h3>Property Maintenance</h3>
+        <p>Ongoing upkeep to keep a property in shape all year round.</p>
+      </div>
+      <div class="service-card">
+        <span class="service-num mono">/06</span>
+        <h3>Cleaning Services</h3>
+        <p>Post-construction and general cleaning, done thoroughly.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag" style="color:var(--teal-deeper);">Our work</span>
+      <h2>On site, not just in the brochure.</h2>
+      <p>A look at recent jobs — from roof insulation to the final coat of paint.</p>
+    </div>
+  </div>
+  <div class="wrap">
+    <div class="gallery-grid reveal">
+      <div class="gallery-item tall">
+        <img src="exterior.jpg" alt="Completed house with finished roofing and rendering" loading="lazy">
+        <div class="gallery-caption"><span class="mono">FINISHED PROJECT</span><span class="label">Complete roofing &amp; render</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="insulation.jpg" alt="Roof insulation being fitted under metal roofing sheets" loading="lazy">
+        <div class="gallery-caption"><span class="mono">ROOF INSULATION</span><span class="label">Fitted under sheeting</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="insulation2.jpg" alt="Team fitting rockwool insulation on scaffolding indoors" loading="lazy">
+        <div class="gallery-caption"><span class="mono">WALL INSULATION</span><span class="label">Rockwool, on site</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="ceiling.jpg" alt="Worker fitting gypsum ceiling board on metal frame" loading="lazy">
+        <div class="gallery-caption"><span class="mono">CEILING WORKS</span><span class="label">Gypsum boarding (POP)</span></div>
+      </div>
+      <div class="gallery-item tall">
+        <img src="ceiling2.jpg" alt="Finished suspended ceiling with POP feature in a hall" loading="lazy">
+        <div class="gallery-caption"><span class="mono">CEILING WORKS</span><span class="label">Suspended ceiling, finished</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="painting.jpg" alt="Worker painting a bedroom wall" loading="lazy">
+        <div class="gallery-caption"><span class="mono">PAINTING</span><span class="label">Interior finish</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="paint-swatches.jpg" alt="Paint colour swatches from in-house paint production" loading="lazy">
+        <div class="gallery-caption"><span class="mono">PAINT PRODUCTION</span><span class="label">Mixed in-house</span></div>
+      </div>
+      <div class="gallery-item">
+        <img src="bathroom.jpg" alt="Finished tiled bathroom" loading="lazy">
+        <div class="gallery-caption"><span class="mono">FINISHING</span><span class="label">Tiling &amp; fittings</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="section-tag">Why Arowosola</span>
+      <h2>Built on the site, not just the sales pitch.</h2>
+    </div>
+    <div class="why-grid reveal">
+      <div class="why-item">
+        <span class="mono">OWN PAINT</span>
+        <h3>Paint produced in-house</h3>
+        <p>Fewer surprises with colour matching or running out mid-job.</p>
+      </div>
+      <div class="why-item">
+        <span class="mono">ONE TEAM</span>
+        <h3>Full finish, one contractor</h3>
+        <p>Insulation, ceiling, screeding and paint, coordinated by one crew.</p>
+      </div>
+      <div class="why-item">
+        <span class="mono">DIRECT LINE</span>
+        <h3>Straight to the contractor</h3>
+        <p>Call or WhatsApp directly — no office to go through.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-grid">
+    <div class="contact-card reveal">
+      <h2>Get in touch</h2>
+      <p>Reach out for a quote or to talk through a job.</p>
+      <div class="contact-methods">
+        <a class="contact-method" href="https://wa.me/2348035142283" target="_blank" rel="noopener">
+          <div><span class="mono">WHATSAPP</span><span class="value">080 3514 2283</span></div>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="contact-method" href="tel:+2348035142283">
+          <div><span class="mono">CALL</span><span class="value">080 3514 2283</span></div>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="contact-method" href="tel:+2347089510131">
+          <div><span class="mono">CALL</span><span class="value">070 8951 0131</span></div>
+          <span class="arrow">↗</span>
+        </a>
+        <a class="contact-method" href="mailto:dotunadegoke74@gmail.com">
+          <div><span class="mono">EMAIL</span><span class="value">dotunadegoke74@gmail.com</span></div>
+          <span class="arrow">↗</span>
+        </a>
+      </div>
+    </div>
+    <div class="contact-side reveal">
+      <h3>Ready when you are.</h3>
+      <p>Describe the job — insulation, ceiling, screeding, paint, maintenance or cleaning — and get a straight answer on cost and timing.</p>
+      <p>Serving Oyo State and beyond.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span>© <span id="year"></span> Arowosola Integrated Services</span>
+    <span>Roofing · Insulation · Ceilings · Screeding · Paint · Maintenance · Cleaning</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  toggle.addEventListener('click', () => links.classList.toggle('open'));
+  links.querySelectorAll('a').forEach(a => a.addEventListener('click', () => links.classList.remove('open')));
+
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15});
+  revealEls.forEach(el => io.observe(el));
+</script>
+
+</body>
+</html>
